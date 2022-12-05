@@ -88,7 +88,13 @@ if (isset($_POST['registeragent'])){
                                         <td><?php echo $row['phone'] ; ?></td>
                                         <td><?php echo $row['email'] ; ?></td>
                                         <td><?php echo $row['dob'] ; ?></td>
-                                        <td><?php echo $row['healthcenter'] ; ?></td>
+                                      <td>
+                                        <?php
+                                            $productid=$row['healthcenter'];
+                                            $quertwo=mysqli_query($conn,"SELECT * FROM healthcenter WHERE id=$productid");
+                                            $rowtwo=mysqli_fetch_array($quertwo);
+                                            echo $rowtwo['centername'] ;
+                                        ?></td>
                                         <td><?php echo $row['password'] ; ?></td>
                                         <td><?php echo $row['registtime'] ; ?></td>
                                         <td>

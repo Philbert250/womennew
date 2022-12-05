@@ -59,7 +59,7 @@
         </div>
 
         <h2></h2>
-        <h2><span class="typed" data-typed-items="Women Pregnancy Monitoring"></span></h2>
+        <h2><span class="typed" data-typed-items="Women Pregnancy Monitoring System"></span></h2>
         <div class="actions">
           <a href="./admin/signin.php" class="btn-get-started">Sign In As Admin</a>
           <a href="./admin/signindoctor.php" class="btn-services">Sign In As Doctor</a>
@@ -73,13 +73,12 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <a href="index.php" class="logo mr-auto">Women Pregnancy Monitoring</a>
+      <a href="index.php" class="logo mr-auto">Women Pregnancy Monitoring System</a>
       <!-- Uncomment below if you prefer to use a text logo -->
       <!-- <h1 class="logo mr-auto"><a href="index.html">Imperial</a></h1> -->
 
       <nav id="navbar" class="navbar">
         <ul>
-        Affordable access to drinking water
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

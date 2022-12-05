@@ -140,7 +140,7 @@ include 'admin_session.php';
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="agent.php">View Report</a></li>
+                <li class="nav-item"> <a class="nav-link" href="reportadmin.php">View Report</a></li>
               </ul>
             </div>
           </li>

@@ -2,6 +2,7 @@
 include 'navbar.php'; 
 if (isset($_POST['transfer'])){   
     $woman=$_POST['woman'];
+    $phone=$_POST['phone'];
     $treat=$_POST['treat'];
     $dose=$_POST['dose'];
     $advice=$_POST['advice'];
@@ -28,6 +29,44 @@ if (isset($_POST['transfer'])){
         '$agent_id'
     )");
     if ($sql) {
+               
+$subject = "Dear " . $name;
+$detail = "Murakoze kugana ikogonderabuzamo, murakomeza gufata serives witabwehwo numujyana wubuzima kugeza ubyaye";
+//Sending Phone Message
+$msg = $subject .', '. $detail;                                               
+$data = array(
+"sender"=>"+250785300822",
+"recipients"=>$phone,
+"message"=>$msg,    
+ );
+
+$url = "https://www.intouchsms.co.rw/api/sendsms/.json";
+    
+$data = http_build_query ($data);
+
+$username="philbert";
+$password="champion1";
+    
+//open connection
+$ch = curl_init();
+
+//set the url, number of POST vars, POST data
+curl_setopt($ch,CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);  
+curl_setopt($ch,CURLOPT_POST,true);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+curl_setopt($ch,CURLOPT_POSTFIELDS, $data);
+
+//execute post
+$result = curl_exec($ch);
+$httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+//close connection
+curl_close($ch);
+ // echo "<script langauage='text/javascript'>alert('Message Sent')</script>";
+//end of sending message
+
+
         $successmessage .='Take treatment, Successfull';	
     }
     else {
@@ -88,6 +127,11 @@ if (isset($_POST['transfer'])){
                         }
                             ?>
                         </select>
+                        </div>
+                        <div class=" col-md-4 col-xl-4 form-group">
+                        <label for="exampleInputUsername1">Phone</label>
+                        <input type="text" name="phone" class="form-control" id="">
+                        
                         </div>
                         <div class=" col-md-4 col-xl-4 form-group">
                         <label for="exampleInputUsername1">Name of Event</label>

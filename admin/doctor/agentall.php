@@ -91,7 +91,13 @@ if (isset($_POST['registeragent'])){
                                         <td><?php echo $row['location'] ; ?></td>
                                         <td><?php echo $row['cell'] ; ?></td>
                                         <td><?php echo $row['village'] ; ?></td>
-                                        <td><?php echo $row['hospital'] ; ?></td>
+                                        <td>
+                                        <?php
+                                            $productid=$row['hospital'];
+                                            $quertwo=mysqli_query($conn,"SELECT * FROM healthcenter WHERE id=$productid");
+                                            $rowtwo=mysqli_fetch_array($quertwo);
+                                            echo $rowtwo['centername'] ;
+                                        ?></td>
                                         <td><?php echo $row['role'] ; ?></td>
                                         <td>
                                             <a class="btn btn-danger"  href="delete.php?delagent=<?php echo $row['id']; ?> " onclick="return confirm('are you sure! you want to delete this Adversor.')" id="red">Delete</a>

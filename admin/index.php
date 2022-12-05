@@ -21,7 +21,7 @@ include 'navbar.php';
                   <div class="weather-info">
                     <div class="d-flex">
                       <div class="ml-2">
-                        <h4 class="location font-weight-normal">Drink Jibu</h4>
+                        <h4 class="location font-weight-normal">Take care baby</h4>
                         <h6 class="font-weight-normal">Well Being</h6>
                       </div>
                     </div>

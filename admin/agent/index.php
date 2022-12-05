@@ -8,7 +8,7 @@ include 'navbar.php';
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">Welcome Health Adversor <span style="color: white"><?php echo $agent_firstname?></span> </h3>
+                  <h3 class="font-weight-bold">Welcome  Community Health work<span style="color: white"><?php echo $agent_firstname?></span> </h3>
                 </div>
                 <div class="col-12 col-xl-4">
                  <div class="justify-content-end d-flex">
@@ -44,7 +44,6 @@ include 'navbar.php';
                   <div class="weather-info">
                     <div class="d-flex">
                       <div class="ml-2">
-                        <h4 class="location font-weight-normal">Drink Jibu</h4>
                         <h6 class="font-weight-normal">Well Being</h6>
                       </div>
                     </div>

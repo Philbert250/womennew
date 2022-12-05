@@ -29,6 +29,44 @@ if (isset($_POST['registerwoman'])){
     )");
         if ($sql) {
            
+$subject = "Muraho " . $name;
+$detail = "Murakoze kwiyandikasha nkumunganaga mubitaro byacu";
+//Sending Phone Message
+$msg = $subject .', '. $detail;                                               
+$data = array(
+"sender"=>"+250785300822",
+"recipients"=>$phone,
+"message"=>$msg,    
+ );
+
+$url = "https://www.intouchsms.co.rw/api/sendsms/.json";
+    
+$data = http_build_query ($data);
+
+$username="philbert";
+$password="champion1";
+    
+//open connection
+$ch = curl_init();
+
+//set the url, number of POST vars, POST data
+curl_setopt($ch,CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);  
+curl_setopt($ch,CURLOPT_POST,true);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+curl_setopt($ch,CURLOPT_POSTFIELDS, $data);
+
+//execute post
+$result = curl_exec($ch);
+$httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+//close connection
+curl_close($ch);
+ // echo "<script langauage='text/javascript'>alert('Message Sent')</script>";
+//end of sending message
+
+
+
                 $successmessage="Register Doctor  Successfull !";
         }
         else {

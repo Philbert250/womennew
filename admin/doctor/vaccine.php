@@ -2,6 +2,7 @@
 include 'navbar.php'; 
 if (isset($_POST['transfer'])){   
     $woman=$_POST['woman'];
+    $phone=$_POST['phone'];
     $vaccine=$_POST['vaccine'];
     $dose=$_POST['dose'];
     $period=$_POST['period'];
@@ -25,6 +26,45 @@ if (isset($_POST['transfer'])){
         '$admin_id'
     )");
     if ($sql) {
+        
+$subject = "Muraho neza " . $name;
+$detail = "Murakoze kugana Gufata Urukingo kukigondebuzima, murakomeza gufata serives witabwehwo numujyana wubuzima kugeza ubyaye";
+//Sending Phone Message
+$msg = $subject .', '. $detail;                                               
+$data = array(
+"sender"=>"+250785300822",
+"recipients"=>$phone,
+"message"=>$msg,    
+ );
+
+$url = "https://www.intouchsms.co.rw/api/sendsms/.json";
+    
+$data = http_build_query ($data);
+
+$username="philbert";
+$password="champion1";
+    
+//open connection
+$ch = curl_init();
+
+//set the url, number of POST vars, POST data
+curl_setopt($ch,CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);  
+curl_setopt($ch,CURLOPT_POST,true);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+curl_setopt($ch,CURLOPT_POSTFIELDS, $data);
+
+//execute post
+$result = curl_exec($ch);
+$httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+//close connection
+curl_close($ch);
+ // echo "<script langauage='text/javascript'>alert('Message Sent')</script>";
+//end of sending message
+
+
+
         $successmessage .='Take Vaccine, Successfull';	
     }
     else {
@@ -85,6 +125,11 @@ if (isset($_POST['transfer'])){
                         }
                             ?>
                         </select>
+                        </div>
+                        <div class=" col-md-4 col-xl-4 form-group">
+                        <label for="exampleInputUsername1">Phone number</label>
+                        <input type="text" name="phone" class="form-control" id="">
+                        
                         </div>
                         <div class=" col-md-4 col-xl-4 form-group">
                         <label for="exampleInputUsername1">Name of vaccine</label>

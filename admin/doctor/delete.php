@@ -65,4 +65,20 @@ if (isset($_GET['deltransfer'])){
         header("location:tranferall.php");
     }
 }
+if (isset($_GET['delchald'])){
+	$del_id=$_GET['delchald'];
+	$del_quer=mysqli_query($conn,"DELETE FROM  childborn WHERE id='$del_id' ");	 
+    if ($del_quer) {
+        
+        echo "<script type='text/javascript'>alert(' Deleted! Successfully!')</script>";   
+        header("location:childall.php");
+    }
+    else {
+        
+		?>
+        <script type="text/javascript">alert('Delete failed!')</script>
+        <?php
+        header("location:childall.php");
+    }
+}
 ?>

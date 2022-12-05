@@ -116,6 +116,19 @@ include 'admin_session.php';
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#child " aria-expanded="false" aria-controls="child">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Children</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="child">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="child.php">New Child born</a></li>
+                <li class="nav-item"> <a class="nav-link" href="childall.php">All Children</a></li>
+              </ul>
+            </div>
+          </li>
           <br><br>
           
           <li class="nav-item">
@@ -142,6 +155,7 @@ include 'admin_session.php';
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="vaccine.php">Vaccine</a></li>
                 <li class="nav-item"> <a class="nav-link" href="vaccineall.php">All Vaccine</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">All Request</a></li>
               </ul>
             </div>
           </li>
@@ -168,8 +182,7 @@ include 'admin_session.php';
             </a>
             <div class="collapse" id="orders">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="tranfer.php">Generate Report</a></li>
-                <li class="nav-item"> <a class="nav-link" href="tranferall.php">Report From Advisor</a></li>
+                <li class="nav-item"> <a class="nav-link" href="reportdoctor.php">Generate Report</a></li>
               </ul>
             </div>
           </li>

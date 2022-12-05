@@ -89,11 +89,8 @@ if (isset($_POST['transfer'])){
                         
                         </div>
                         <div class=" col-md-4 col-xl-4 form-group">
-                        <label for="exampleInputUsername1">Transfered to Hospital</label>
-                        <select name="hospital" class="form-control" id="">
-                            <option value="Hospital">To Hospital</option>
-                        </select>
-                        </select>
+                        <label for="exampleInputUsername1">Transfered to (hospital name)</label>
+                        <input type="text" name="hospital" class="form-control" id="">
                         </div>
                         <div class=" col-md-4 col-xl-4 form-group">
                         <label for="exampleInputUsername1">Deseases</label>

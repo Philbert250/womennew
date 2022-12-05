@@ -50,10 +50,10 @@ if (isset($_POST['registeragent'])){
                 <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                    <h4 class="card-title">All Health Adversor</h4>
+                    <h4 class="card-title">All Community Health Works</h4>
                     </div>
                     <div class="col-md-6">
-                        <a href="agent.php" class=" float-right btn btn-primary mr-2">Add Health Adversor</a>
+                        <a href="agent.php" class=" float-right btn btn-primary mr-2">Add Community Health Works</a>
                     </div>
                   </div>
                   <div class=" table-border-style">

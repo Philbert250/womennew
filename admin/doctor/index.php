@@ -21,7 +21,7 @@ include 'navbar.php';
                   <div class="weather-info">
                     <div class="d-flex">
                       <div class="ml-2">
-                        <h4 class="location font-weight-normal">Drink Jibu</h4>
+                        <h4 class="location font-weight-normal">Take care baby</h4>
                         <h6 class="font-weight-normal">Well Being</h6>
                       </div>
                     </div>
@@ -33,7 +33,7 @@ include 'navbar.php';
               <div class="row">
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-dark-blue">
-                    <a href="../agentall.php" style="color: white; text-decoration: none;">
+                    <a href="" style="color: white; text-decoration: none;">
                     <div class="card-body">
                       <p class="mb-4">Total Adversor</p>
                       <p class="fs-30 mb-2"><?php
@@ -49,7 +49,7 @@ include 'navbar.php';
               <div class="row">
                 <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
                   <div class="card card-light-blue">
-                    <a href="./productall.php" style="color: white; text-decoration: none;">
+                    <a href="" style="color: white; text-decoration: none;">
                     <div class="card-body">
                       <p class="mb-4">Our women</p>
                       <p class="fs-30 mb-2"><?php
