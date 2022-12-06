@@ -63,7 +63,7 @@
         <div class="actions">
           <a href="./admin/signin.php" class="btn-get-started">Sign In As Admin</a>
           <a href="./admin/signindoctor.php" class="btn-services">Sign In As Doctor</a>
-          <a href="./admin/signinagent.php" class="btn-services">Sign In As Adversor</a>
+          <a href="./admin/signinagent.php" class="btn-services">Sign In As Community Health works</a>
         </div>
       </div>
     </div>

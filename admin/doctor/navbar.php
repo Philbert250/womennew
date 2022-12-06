@@ -51,7 +51,7 @@ include 'admin_session.php';
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../images/faces/face28.jpg" alt="profile"/>
+            <span style="color: blue"><?php echo $doctor_name?></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
@@ -155,7 +155,7 @@ include 'admin_session.php';
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="vaccine.php">Vaccine</a></li>
                 <li class="nav-item"> <a class="nav-link" href="vaccineall.php">All Vaccine</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">All Request</a></li>
+                <!-- <li class="nav-item"> <a class="nav-link" href="">All Request</a></li> -->
               </ul>
             </div>
           </li>

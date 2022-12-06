@@ -51,7 +51,7 @@ include 'navbar.php';
                   <div class="card card-light-blue">
                     <a href="" style="color: white; text-decoration: none;">
                     <div class="card-body">
-                      <p class="mb-4">Our Prent</p>
+                      <p class="mb-4">Our Parent</p>
                       <p class="fs-30 mb-2"><?php
 														$select=$conn->query("SELECT * FROM parent");
 														$count=mysqli_num_rows($select);
