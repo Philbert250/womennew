@@ -81,7 +81,14 @@ if (isset($_POST['registeragent'])){
                                     ?>
                                     <tr>
                                         <td><?php echo $row['id'] ; ?></td>
-                                        <td><?php echo $row['woman'] ; ?></td>
+                                        <td>
+                                            <?php
+                                                $productid=$row['woman'];
+                                                $quertwo=mysqli_query($conn,"SELECT * FROM parent WHERE id=$productid");
+                                                $rowtwo=mysqli_fetch_array($quertwo);
+                                                echo $rowtwo['name'] ;
+                                            ?>
+                                        </td>
                                         <td><?php echo $row['sponsor'] ; ?></td>
                                         <td><?php echo $row['hospital'] ; ?></td>
                                         <td><?php echo $row['deseases'] ; ?></td>
@@ -89,7 +96,8 @@ if (isset($_POST['registeragent'])){
                                         <td><?php echo $row['timesent'] ; ?></td>
                                         <td>
                                             <a class="btn btn-danger"  href="delete.php?deltransfer=<?php echo $row['id']; ?> " onclick="return confirm('are you sure! you want to delete this Transfer.')" id="red">Delete</a>
-                                        </td>
+                                            <a class="btn btn-primary"  href="transferupdate.php?updatetransfer=<?php echo $row['id']; ?>"  id="red">Update</a>
+                                       </td>
                                     </tr>
                                     <?php
                                     }

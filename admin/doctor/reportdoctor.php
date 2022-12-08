@@ -95,6 +95,52 @@ $html='
   
 </table>
 
+<br>
+<h5>Community Health works</h5>
+<table border="1" >
+<tr>
+<th>first name</th>
+<th>last name</th>
+<th>email</th>
+<th>phone</th>
+<th>location</th>
+<th>cell</th>
+<th>village</th>
+<th>hospital</th>
+</tr>
+  ';
+  $quer=mysqli_query($conn,"SELECT * FROM adversor");
+  while ($row=mysqli_fetch_array($quer)){
+      $firstname=$row['firstname'];
+      $lastname=$row['lastname'];
+      $email=$row['email'];
+      $phone=$row['phone'];
+      $location=$row['location'];
+      $email=$row['email'];
+      $hospital=$row['hospital'];
+      $quertwo=mysqli_query($conn,"SELECT * FROM healthcenter WHERE id=$hospital");
+      $rowtwo=mysqli_fetch_array($quertwo);
+      $hospital1=$rowtwo['centername'] ;
+      $dob=$row['dob'];
+      $cell=$row['cell'];
+      $village=$row['village'];
+    $html .='
+  ';
+  }
+  $html .='
+  <tr>
+      <td>'.$firstname.'</td>
+      <td>'.$lastname.'</td>
+      <td>'.$email.'</td>
+      <td>'.$gender.'</td>
+      <td>'.$location.'</td>
+      <td>'.$cell.'</td>
+      <td>'.$village.'</td>
+      <td>'.$hospital1.'</td>
+  </tr>
+  
+</table>
+
   
 ';
 $mpdf->WriteHTML($html);

@@ -71,7 +71,6 @@ if (isset($_POST['registeragent'])){
                                         <th>Email</th>
                                         <th>dob</th>
                                         <th>health center </th>
-                                        <th>Password </th>
                                         <th>Registed Time</th>
                                         <th>action</th>
                                     </tr>
@@ -95,10 +94,10 @@ if (isset($_POST['registeragent'])){
                                             $rowtwo=mysqli_fetch_array($quertwo);
                                             echo $rowtwo['centername'] ;
                                         ?></td>
-                                        <td><?php echo $row['password'] ; ?></td>
                                         <td><?php echo $row['registtime'] ; ?></td>
                                         <td>
                                             <a class="btn btn-danger"  href="delete.php?deldoctor=<?php echo $row['id']; ?> " onclick="return confirm('are you sure! you want to delete this doctor.')" id="red">Delete</a>
+                                            <a class="btn btn-primary"  href="doctorupdate.php?updatedoctor=<?php echo $row['id']; ?>"  id="red">Update</a>
                                         </td>
                                     </tr>
                                     <?php

@@ -96,7 +96,8 @@ if (isset($_POST['registeragent'])){
                                         <td><?php echo $row['comment'] ; ?></td>
                                         <td>
                                             <a class="btn btn-danger"  href="delete.php?delvacci=<?php echo $row['id']; ?> " onclick="return confirm('are you sure! you want to delete this treate.')" id="red">Delete</a>
-                                          </td>
+                                            <a class="btn btn-primary"  href="vaccineupdate.php?updatevaccine=<?php echo $row['id']; ?>"  id="red">Update</a>
+                                       </td>
                                     </tr>
                                     <?php
                                     }

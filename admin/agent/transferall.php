@@ -53,7 +53,7 @@ if (isset($_POST['registeragent'])){
                     <h4 class="card-title">All Transfer</h4>
                     </div>
                     <div class="col-md-6">
-                        <a href="tranfer.php" class=" float-right btn btn-primary mr-2">Make New</a>
+                        <a href="transfer.php" class=" float-right btn btn-primary mr-2">Make New</a>
                     </div>
                   </div>
                   <div class=" table-border-style">
@@ -69,6 +69,7 @@ if (isset($_POST['registeragent'])){
                                         <th>Hospital</th>
                                         <th>deseases</th>
                                         <th>Comments</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -78,11 +79,20 @@ if (isset($_POST['registeragent'])){
                                     ?>
                                     <tr>
                                         <td><?php echo $row['id'] ; ?></td>
-                                        <td><?php echo $row['woman'] ; ?></td>
+                                        <td>
+                                            <?php
+                                                $productid=$row['woman'];
+                                                $quertwo=mysqli_query($conn,"SELECT * FROM parent WHERE id=$productid");
+                                                $rowtwo=mysqli_fetch_array($quertwo);
+                                                echo $rowtwo['name'] ;
+                                            ?>
+                                        </td>
                                         <td><?php echo $row['hospital'] ; ?></td>
                                         <td><?php echo $row['problem'] ; ?></td>
                                         <td><?php echo $row['Comments'] ; ?></td>
-                                       
+                                        <td>
+                                           <a class="btn btn-danger"  href="delete.php?deltransfer=<?php echo $row['id']; ?> " onclick="return confirm('are you sure! you want to delete.')" id="red">Delete</a>
+                                        </td>
                                     </tr>
                                     <?php
                                     }

@@ -5,6 +5,12 @@ if (isset($_POST['transfer'])){
     $hospital=$_POST['hospital'];
     $deseases=$_POST['deseases'];
     $comment=$_POST['comment'];
+
+    $quertwo=mysqli_query($conn,"SELECT * FROM parent WHERE id=$woman");
+    $rowtwo=mysqli_fetch_array($quertwo);
+    $womename = $rowtwo['name'] ;
+    $phonemessage = $rowtwo['phone'] ;
+    
     $sql=mysqli_query($conn,"INSERT INTO transferhealth(
         woman,
         hospital,
@@ -18,7 +24,44 @@ if (isset($_POST['transfer'])){
         '$comment',
         '$admin_id'
     )");
-    if ($sql) {
+    if ($sql) {              
+        $subject = "Muraho neza " . $womename;
+        $detail = "Murakoze mwahawe transfer  kuri".$hospital." bazakomeza kukwitaho neza, Murakomeza gufata serivese kumujyana wacu wubuzima";
+        //Sending Phone Message
+        $msg = $subject .', '. $detail;                                               
+        $data = array(
+        "sender"=>"+250785300822",
+        "recipients"=>$phonemessage,
+        "message"=>$msg,    
+        );
+
+        $url = "https://www.intouchsms.co.rw/api/sendsms/.json";
+            
+        $data = http_build_query ($data);
+
+        $username="philbert";
+        $password="champion1";
+            
+        //open connection
+        $ch = curl_init();
+
+        //set the url, number of POST vars, POST data
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);  
+        curl_setopt($ch,CURLOPT_POST,true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch,CURLOPT_POSTFIELDS, $data);
+
+        //execute post
+        $result = curl_exec($ch);
+        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        //close connection
+        curl_close($ch);
+        // echo "<script langauage='text/javascript'>alert('Message Sent')</script>";
+        //end of sending message
+
+
         $successmessage .='Make transfer, Successfull';	
     }
     else {
@@ -38,7 +81,7 @@ if (isset($_POST['transfer'])){
                     <h4 class="card-title">Make A Transfer for woman</h4>
                     </div>
                     <div class="col-md-6">
-                        <a href="tranferall.php" class=" float-right btn btn-primary mr-2">All Transfer</a>
+                        <a href="transferall.php" class=" float-right btn btn-primary mr-2">All Transfer</a>
                     </div>
                   </div>
                   <?php

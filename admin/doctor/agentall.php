@@ -50,10 +50,10 @@ if (isset($_POST['registeragent'])){
                 <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                    <h4 class="card-title">All Health Adversor</h4>
+                    <h4 class="card-title">All Community Health works</h4>
                     </div>
                     <div class="col-md-6">
-                        <a href="agent.php" class=" float-right btn btn-primary mr-2">Add Health Adversor</a>
+                        <a href="agent.php" class=" float-right btn btn-primary mr-2">Add Community Health works</a>
                     </div>
                   </div>
                   <div class=" table-border-style">
@@ -101,6 +101,7 @@ if (isset($_POST['registeragent'])){
                                         <td><?php echo $row['role'] ; ?></td>
                                         <td>
                                             <a class="btn btn-danger"  href="delete.php?delagent=<?php echo $row['id']; ?> " onclick="return confirm('are you sure! you want to delete this Adversor.')" id="red">Delete</a>
+                                            <a class="btn btn-primary"  href="agentupdate.php?updateagent=<?php echo $row['id']; ?>"  id="red">Update</a>
                                         </td>
                                     </tr>
                                     <?php

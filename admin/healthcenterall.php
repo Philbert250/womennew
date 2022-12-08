@@ -85,7 +85,8 @@ if (isset($_POST['registeragent'])){
                                         <td><?php echo $row['registdate'] ; ?></td>
                                         <td>
                                             <a class="btn btn-danger"  href="delete.php?delhealth=<?php echo $row['id']; ?> " onclick="return confirm('are you sure! you want to delete this health center.')" id="red">Delete</a>
-                                        </td>
+                                            <a class="btn btn-primary"  href="healthupdate.php?updatehealth=<?php echo $row['id']; ?>"  id="red">Update</a>
+                                       </td>
                                     </tr>
                                     <?php
                                     }
